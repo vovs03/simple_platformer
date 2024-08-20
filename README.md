@@ -27,3 +27,27 @@
 ![rslt](https://github.com/user-attachments/assets/3d778d6f-7c28-4a34-89da-5d23e9b8d186)
 
 ---
+
+## 2 Ввод, Скрипт, Движение
+
+> [Video_tutorial 2](https://www.youtube.com/watch?v=kO8m2xvx3sU)
+
+```lua
+function on_input(self, action_id, action)
+    local position = go.get_position() -- get actual position of the current GameObj
+    ...
+end
+```
+
+- [`msg.post`](https://defold.com/ref/stable/msg/)
+- [`API go.get_position`](https://defold.com/ref/stable/go/#go.get_position:[id])
+
+### Steps
+
+- Setting up input bindings
+- Writing script for handling inputs
+- Adding functionality to move game object according to inputs
+- Adding functionality to play animations and flip sprites according to direction
+- Attaching script to game object as component
+
+---

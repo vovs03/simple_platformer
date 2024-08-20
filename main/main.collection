@@ -2,7 +2,11 @@ name: "main"
 scale_along_z: 0
 embedded_instances {
   id: "hero"
-  data: "embedded_components {\n"
+  data: "components {\n"
+  "  id: \"hero\"\n"
+  "  component: \"/main/hero.script\"\n"
+  "}\n"
+  "embedded_components {\n"
   "  id: \"sprite\"\n"
   "  type: \"sprite\"\n"
   "  data: \"default_animation: \\\"idle\\\"\\n"
@@ -13,15 +17,15 @@ embedded_instances {
   "}\\n"
   "\"\n"
   "  position {\n"
-  "    x: 204.0\n"
-  "    y: -14.0\n"
-  "    z: 22.0\n"
+  "    x: 9.0\n"
+  "    y: 13.0\n"
   "  }\n"
   "}\n"
   ""
   position {
-    x: 288.0
-    y: 243.0
+    x: 337.0
+    y: 154.0
+    z: 1.0
   }
 }
 embedded_instances {
