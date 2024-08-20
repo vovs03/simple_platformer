@@ -1,0 +1,19 @@
+animations {
+  id: "idle"
+  images {
+    image: "/assets/images/yellow/alienYellow_stand.png"
+  }
+  playback: PLAYBACK_NONE
+}
+animations {
+  id: "run"
+  images {
+    image: "/assets/images/yellow/alienYellow_walk1.png"
+  }
+  images {
+    image: "/assets/images/yellow/alienYellow_walk2.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 12
+}
+extrude_borders: 2

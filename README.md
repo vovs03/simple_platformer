@@ -10,6 +10,14 @@
 - [x] `/main/main.collection` -> наполнение сцены для рендеринга
 ![Outline/Collection](https://github.com/user-attachments/assets/fdc39feb-c0ea-471a-9295-41993b573cd6)
 
+- Setting up project
+- Adding basic visual assets (thanks to Kenney!)
+- Making atlas with images
+- Making tilesource
+- Creating level scene with tilemaps
+- Adding sprite representing our hero
+- Running game
+
 ### In progress
 
 ![prgrss](https://github.com/user-attachments/assets/8daacdd9-20b3-4255-95fa-8cebcff4b30b)
