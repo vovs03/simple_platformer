@@ -65,3 +65,13 @@ end
 
 - [x] `walk()`
 - [x] `flip()`
+
+рефакторинг `on_input`:
+
+- [x] замена конструкции `if_eleif` > тернарное выражение `local direction = (action_id == hash("right")) and DIRECTION_RIGHT or DIRECTION_LEFT`
+и теперь мы направление движения присваиваем локальной переменной `direction` и передаём в
+
+- `walk(direction)`
+- `flip(direction)`
+
+> утром сегодня пробовал(но герой постоянно двигался влево)
