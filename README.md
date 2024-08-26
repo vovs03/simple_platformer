@@ -51,3 +51,17 @@ end
 - Attaching script to game object as component
 
 ---
+
+## 3 Гравитация, Скорость, Столкновения
+
+### Removed from on_input(self, action_id, action)
+
+```lua
+-- https://defold.com/ref/stable/msg/
+-- https://defold.com/ref/stable/go/#go.get_position:[id]
+```
+
+### Functions
+
+- [x] `walk()`
+- [x] `flip()`

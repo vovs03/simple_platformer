@@ -13,7 +13,7 @@ input_method = HiddenInputField
 
 [project]
 title = simple_platformer
-version = 0.0.2
+version = 0.0.3
 publisher = Osart Studio : Pink Gems
 developer = Vladimir Pavlychev
 
