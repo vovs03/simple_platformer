@@ -1,16 +1,17 @@
 local DIRECTION_RIGHT = 1
 local DIRECTION_LEFT = -1
-
+local BASE_VELOCITY = 500
+local GRAVITY = 1000
 
 function init(self)
 	msg.post("#", "acquire_input_focus") -- input focus
+
+	self.velocity = vmath.vector3(0,0,0) -- (0,0,0) == (x,y,z)
+	self.ground_contact = false
 end
 
-function walk(direction)
-	local position = go.get_position() -- get actual position of the current GameObj
-	
-	position.x = position.x + 5 * direction
-	go.set_position(position) -- set the new position of the current GameObj
+function walk(self)
+	self.velocity.x = BASE_VELOCITY * self.direction
 end
 
 function flip(direction)
@@ -25,12 +26,44 @@ function animate(action)
 	end
 end
 
+-- ограничитель во избежании роста скорости гравитации
+local function clamp(v, min, max)
+	if v < min then return min
+	elseif v > max then return max
+	else return v
+	end
+end
+
+function fixed_update(self, dt)
+	--gravity
+	self.velocity.y = self.velocity.y - GRAVITY * dt -- для нижней части экрана
+	self.velocity.y = clamp(self.velocity.y, -2000, 2000)
+
+	if self.ground_contact then
+		self.velocity.y = 0
+	end
+
+	local position = go.get_position() -- get actual position of the current GameObj
+	-- translocation = velocity * dt
+	position = position + self.velocity * dt
+	go.set_position(position) -- set the new position of the current GameObj
+	self.velocity.x = 0
+end
+
+function on_message(self, message_id, message, sender)
+	-- pprint(message_id, message) -- check log for debug
+	if (message_id == hash("contact_point_response"))
+	and message.other_group == hash("level") then 
+		self.ground_contact = true
+		self.velocity.y = 0
+	end
+end
+
 function on_input(self, action_id, action)
 	
 	animate(action)
-
-	local direction = (action_id == hash("right")) and DIRECTION_RIGHT or DIRECTION_LEFT
-	walk(direction)
-	flip(direction)
+	self.direction = (action_id == hash("right")) and DIRECTION_RIGHT or DIRECTION_LEFT
+	walk(self)
+	flip(self.direction)
 
 end
