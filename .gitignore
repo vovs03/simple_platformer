@@ -8,3 +8,13 @@ Thumbs.db
 .project
 .cproject
 builtins
+
+x86_64-win32/
+x86_64-macos/
+js-web/
+armv7-android/
+
+manifest.private.der
+manifest.public.der
+debug.keystore
+debug.keystore.pass.txt
