@@ -16,4 +16,11 @@ animations {
   playback: PLAYBACK_LOOP_FORWARD
   fps: 12
 }
+animations {
+  id: "jump"
+  images {
+    image: "/assets/images/yellow/alienYellow_jump.png"
+  }
+  playback: PLAYBACK_NONE
+}
 extrude_borders: 2

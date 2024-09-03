@@ -17,3 +17,7 @@ version = 0.0.3
 publisher = Osart Studio : Pink Gems
 developer = Vladimir Pavlychev
 
+[physics]
+use_fixed_timestep = 1
+debug = 0
+
