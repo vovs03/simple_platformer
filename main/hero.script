@@ -10,15 +10,15 @@ function init(self)
 	self.ground_contact = false
 end
 
-function walk(self)
+local function walk(self)
 	self.velocity.x = BASE_VELOCITY * self.direction
 end
 
-function flip(direction)
+local function flip(direction)
 	sprite.set_hflip("#sprite", direction < 0)
 end
 
-function animate(action)
+local function animate(action)
 	if action.pressed then
 		sprite.play_flipbook("#sprite", "run")
 	elseif action.released then
